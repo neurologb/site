@@ -1,5 +1,6 @@
 import type React from "react"
 import { Work_Sans, Open_Sans } from "next/font/google"
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import "./globals.css"
 
 const workSans = Work_Sans({
@@ -28,7 +29,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={`${workSans.variable} ${openSans.variable}`}>
-      <body className="font-sans antialiased overflow-x-hidden">{children}</body>
+      <body className="font-sans antialiased overflow-x-hidden">
+        {children}
+        <SpeedInsights />
+      </body>
     </html>
   )
 }
